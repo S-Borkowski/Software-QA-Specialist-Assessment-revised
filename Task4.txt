@@ -1,0 +1,4 @@
+SELECT id, name, surname FROM users WHERE country LIKE "MT";
+SELECT id, name, surname FROM users WHERE country NOT IN ("FR", "PT");
+SELECT id, name, surname FROM users u INNER JOIN users_creds uc ON u.id = uc.id;
+SELECT name, surname, email FROM users u INNER JOIN users_creds uc ON u.id = uc.id AND uc.required_reset_password NOT LIKE 0;
