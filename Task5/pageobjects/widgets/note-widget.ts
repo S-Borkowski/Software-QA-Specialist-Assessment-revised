@@ -1,7 +1,7 @@
 import {type Locator, type Page, TestInfo} from '@playwright/test';
-import {NotesWidget} from './notes-widget';
+import {BaseWidget} from './base-widget';
 
-export class NoteWidget extends NotesWidget {
+export class NoteWidget extends BaseWidget {
     private readonly noteTitleInput: Locator;
     private readonly noteContentInput: Locator;
 

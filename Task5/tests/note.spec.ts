@@ -19,7 +19,7 @@ test.describe('Note', () => {
     let noteTitle = 'Test note';
     await noteWidget.typeNoteTitle(noteTitle);
     await noteWidget.typeNoteContent('Test content');
-    let notesWidget = await noteWidget.clickNotesButton();
+    let notesWidget = await mainWidget.clickNotesButton();
     expect(await notesWidget.noteWithTitleIsPresent(noteTitle)).toBeTruthy();
 
     await test.step('note should persist between sessions', async () => {

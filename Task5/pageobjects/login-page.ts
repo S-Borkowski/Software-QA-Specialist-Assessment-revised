@@ -1,6 +1,7 @@
 import {expect, type Locator, type Page, TestInfo} from '@playwright/test';
 import {BasePage} from './base-page';
 import {User} from '../test-data/objects';
+import {MainWidget} from './widgets/main-widget';
 
 export class LoginPage extends BasePage {
     private readonly usernameInput: Locator;
@@ -34,7 +35,6 @@ export class LoginPage extends BasePage {
     }
 
     async clickContinueButtonAfterPassword() {
-        const {MainWidget} = await import('./widgets/main-widget');
         await this.clickElement(this.continueButton);
         return new MainWidget(this.page, this.testInfo);
     }

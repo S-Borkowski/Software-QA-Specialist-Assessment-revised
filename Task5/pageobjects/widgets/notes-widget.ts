@@ -1,7 +1,7 @@
 import {expect, type Locator, type Page, TestInfo} from '@playwright/test';
-import {MainWidget} from './main-widget';
+import {BaseWidget} from './base-widget';
 
-export class NotesWidget extends MainWidget {
+export class NotesWidget extends BaseWidget {
     private readonly notesSection: Locator;
 
     constructor(page: Page, testInfo: TestInfo) {
