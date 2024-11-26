@@ -1,17 +1,8 @@
-import { test, expect } from '@playwright/test';
-import {BaseTest} from "./base-test";
+import { test, expect } from './base-test';
 import {LoginPage} from "../pageobjects/login-page";
 import {Users} from "../test-data/objects";
 
 test.describe('Login', () => {
-  test.beforeEach(async ({ page }, testInfo) => {
-    await BaseTest.initialize(page, testInfo)
-  });
-
-  test.afterEach(async ({ page }, testInfo) => {
-    await BaseTest.takeScreenshot(page, testInfo);
-  });
-
   test('should not login with incorrect email', async ({ page }, testInfo) => {
     let loginPage = new LoginPage(page, testInfo);
     await loginPage.typeUsername(Users.INVALID_USER.username);

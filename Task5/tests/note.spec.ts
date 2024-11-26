@@ -1,17 +1,9 @@
-import { test, expect } from '@playwright/test';
+import { test, expect } from './base-test';
 import {BaseTest} from './base-test';
 import {LoginPage} from '../pageobjects/login-page';
 import {Users} from '../test-data/objects';
 
 test.describe('Note', () => {
-  test.beforeEach(async ({ page }, testInfo) => {
-    await BaseTest.initialize(page, testInfo)
-  });
-
-  test.afterEach(async ({ page }, testInfo) => {
-    await BaseTest.takeScreenshot(page, testInfo);
-  });
-
   test('logged in user should be able to create a note', async ({ page, context }, testInfo) => {
     let loginPage = new LoginPage(page, testInfo);
     let mainWidget = await loginPage.login(Users.VALID_USER);
